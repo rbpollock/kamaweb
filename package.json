@@ -1,0 +1,36 @@
+{
+  "name": "vercel-express",
+  "version": "1.1.0",
+  "description": "",
+  "author": "Duc Nguyen",
+  "homepage": "https://github.com/ngduc/vercel-express",
+  "main": "app/build/index.js",
+  "scripts": {
+    "dev": "vercel dev",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "compression": "^1.7.4",
+    "express": "^4.17.1",
+    "helmet": "^4.4.1"
+  },
+  "devDependencies": {
+    "husky": "^5.1.1"
+  },
+  "prettier": {
+    "tabWidth": 2,
+    "printWidth": 120,
+    "singleQuote": true,
+    "trailingComma": "none",
+    "parser": "typescript"
+  },
+  "engines": {
+    "node": ">=12.0.0"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "echo --- npm test"
+    }
+  }
+}
