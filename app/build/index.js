@@ -20,13 +20,13 @@ app.get('/api', (req, res) => {
   <meta name="twitter:url" content="https://www.kamagang.com/"></meta>
   <meta property="og:url" content="https://www.kamagang.com/" />
 <meta property="og:title" content="KamaGang" />
-<meta property="og:description" content="Time to get your Kama!" />
+<meta property="og:description" content="The hottest collectible on the market!" />
 <meta property="og:image" content="${req.query.url}" />
-<meta http-equiv="refresh" content="1;url=https://kamagang.com/" />
 <title>KamaGang</title>
   </head>
   <body>
-  <img src="${req.query.url}">
+  <img src="${req.query.url}"><br/>
+  See more info at <a href="https://kamagang.com">KamaGang.com</a>
   </body>
   </html>
   `);
