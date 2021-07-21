@@ -11,7 +11,26 @@ app.get('/api', (req, res) => {
     const path = `/api/item/${randomId}`;
     res.setHeader('Content-Type', 'text/html');
     res.setHeader('Cache-Control', 's-max-age=1, stale-while-revalidate');
-    res.end(`Hello! Go to item: <a href="${path}">${path}</a>`);
+        res.send(`
+  <html>
+  <head>
+  <meta name="twitter:card" content="summary_large_image"></meta>
+  <meta name="twitter:image" content="${req.query.url}"></meta>
+  <meta name="twitter:site" content="@TheKamaGang"></meta>
+  <meta name="twitter:url" content="https://www.kamagang.com/"></meta>
+  <meta property="og:url" content="https://www.kamagang.com/" />
+<meta property="og:title" content="KamaGang" />
+<meta property="og:description" content="Time to get your Kama!" />
+<meta property="og:image" content="${req.query.url}" />
+<meta http-equiv="refresh" content="1;url=https://kamagang.com/" />
+<title>KamaGang</title>
+  </head>
+  <body>
+  <img src="${req.query.url}">
+  </body>
+  </html>
+  `);
+    //res.end(`Hello! Go to item: <a href="${path}">${path}</a>`);
 });
 app.get('/api/item/:itemId', (req, res) => {
     const { itemId } = req.params;
